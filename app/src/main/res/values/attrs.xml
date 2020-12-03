@@ -3,7 +3,6 @@
     <declare-styleable name="ScrollingView">
         <attr name="setCurrentImage" format="reference" />
         <attr name="setNextImage" format="reference" />
-        <attr name="setCurrentImageBackground" format="reference" />
-        <attr name="setNextImageBackground" format="reference" />
+        <attr name="containerBackground" format="reference" />
     </declare-styleable>
 </resources>

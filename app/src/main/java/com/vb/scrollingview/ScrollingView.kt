@@ -26,15 +26,9 @@ class ScrollingView : FrameLayout {
                     )
                 )
                 nextImage.setImageResource(getResourceId(R.styleable.ScrollingView_setNextImage, 0))
-                currentImage.setBackgroundResource(
+                scrollingContainer.setBackgroundResource(
                     getResourceId(
-                        R.styleable.ScrollingView_setCurrentImageBackground,
-                        0
-                    )
-                )
-                nextImage.setBackgroundResource(
-                    getResourceId(
-                        R.styleable.ScrollingView_setNextImageBackground,
+                        R.styleable.ScrollingView_containerBackground,
                         0
                     )
                 )
@@ -44,12 +38,13 @@ class ScrollingView : FrameLayout {
         }
     }
 
-    var animationDuration = 100L
+    var animationDuration = 50L
 
     private var spinsEndCallback: SpinsAnimationListener? = null
 
-    private lateinit var currentImage: ImageView
-    private lateinit var nextImage: ImageView
+    lateinit var currentImage: ImageView
+    lateinit var nextImage: ImageView
+    lateinit var scrollingContainer: FrameLayout
 
     private lateinit var picsList: MutableList<Int>
     private lateinit var tagsList: MutableList<Int>
@@ -62,6 +57,7 @@ class ScrollingView : FrameLayout {
         picsList = mutableListOf()
         tagsList = mutableListOf()
         with(LayoutInflater.from(context).inflate(R.layout.image_view_scrolling, this)) {
+            scrollingContainer = findViewById(R.id.image_vies_scrolling_container)
             currentImage = findViewById(R.id.current_card)
             nextImage = findViewById(R.id.next_card)
             nextImage.translationY = height.toFloat()
