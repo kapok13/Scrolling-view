@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="ScrollingView">
-        <attr name="setCurrentImage" format="reference" />
-        <attr name="setNextImage" format="reference" />
-        <attr name="containerBackground" format="reference" />
+        <attr name="rowCount" format="integer" />
+        <attr name="columnCount" format="integer" />
+        <attr name="images_width" format="dimension" />
+        <attr name="images_height" format="dimension" />
+        <attr name="title_image" format="reference" />
     </declare-styleable>
 </resources>
