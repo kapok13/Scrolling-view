@@ -185,9 +185,9 @@ class ScrollingView : LinearLayout {
     fun setWinChance(imgResId: Int, until: Int) {
         val imgPosList = mutableListOf<Int>()
         if (until in 1..10 && picsList.contains(imgResId)) {
-            for (i in picsList) {
+            for ((position, i) in picsList.withIndex()) {
                 if (i == imgResId)
-                    imgPosList.add(picsList.indexOf(i))
+                    imgPosList.add(position)
             }
             if (imgPosList.size > until) {
                 var differences = imgPosList.size - until
